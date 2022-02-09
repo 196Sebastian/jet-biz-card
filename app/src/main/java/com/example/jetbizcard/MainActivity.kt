@@ -49,13 +49,30 @@ fun CreateBizCard(){
             verticalArrangement = Arrangement.Top,
             horizontalAlignment = Alignment.CenterHorizontally){
                 CreateImageProfile()
-                Divider(modifier = Modifier,
-                Color.LightGray,
-                thickness = 1.dp,
-                startIndent = 0.dp)
+                Divider()
+                CreateInfo()
             }
         }
 
+    }
+}
+
+@Composable
+private fun CreateInfo() {
+    Column(modifier = Modifier.padding(5.dp)) {
+        Text(
+            text = "Sebastian C.",
+            style = MaterialTheme.typography.h4,
+            color = MaterialTheme.colors.primaryVariant)
+
+        Text(
+            "Mobile Developer",
+            modifier = Modifier.padding(3.dp))
+
+        Text(
+            "@196Sebastian",
+            modifier = Modifier.padding(3.dp),
+            style = MaterialTheme.typography.subtitle1)
     }
 }
 
