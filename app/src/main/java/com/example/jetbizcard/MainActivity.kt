@@ -99,10 +99,10 @@ fun Content(){
         shape = RoundedCornerShape(corner = CornerSize(6.dp)),
         border = BorderStroke(width = 2.dp, color = Color.LightGray)){
 
-            Portfolio(data = listOf("Project 1",
-                "Project 2",
-                "Project 3",
-                "Project 4"))
+            Portfolio(data = listOf("NYC Restaurants",
+                "To-Do App",
+                "Japanese Quiz",
+                "Drawing App"))
             
         }
     }
@@ -112,7 +112,7 @@ fun Content(){
 @Composable
 fun Portfolio(data: List<String>) {
     LazyColumn{
-        items(data){ item ->
+        items(1){ item ->
             Card(modifier = Modifier
                 .padding(13.dp)
                 .fillMaxWidth(),
@@ -123,11 +123,65 @@ fun Portfolio(data: List<String>) {
                     .background(MaterialTheme.colors.surface)
                     .padding(7.dp)){
                     CreateImageProfile(modifier = Modifier.size(80.dp))
-                    Column(modifier = Modifier.padding(7.dp).align(alignment = Alignment.CenterVertically)) {
-                        Text(text = item, fontWeight = FontWeight.Bold)
-                        Text("Great Project",
-                        style = MaterialTheme.typography.body2)
-
+                    Column(modifier = Modifier
+                        .padding(7.dp)
+                        .align(alignment = Alignment.CenterVertically)) {
+                        Text( data[0], fontWeight = FontWeight.Bold)
+                        Text("Great Project", style = MaterialTheme.typography.body2)
+                    }
+                }
+            }
+            Card(modifier = Modifier
+                .padding(13.dp)
+                .fillMaxWidth(),
+                shape = RectangleShape,
+                elevation = 4.dp){
+                Row(modifier = Modifier
+                    .padding(8.dp)
+                    .background(MaterialTheme.colors.surface)
+                    .padding(7.dp)){
+                    CreateImageProfile(modifier = Modifier.size(80.dp))
+                    Column(modifier = Modifier
+                        .padding(7.dp)
+                        .align(alignment = Alignment.CenterVertically)) {
+                        Text( data[1], fontWeight = FontWeight.Bold)
+                        Text("Project", style = MaterialTheme.typography.body2)
+                    }
+                }
+            }
+            Card(modifier = Modifier
+                .padding(13.dp)
+                .fillMaxWidth(),
+                shape = RectangleShape,
+                elevation = 4.dp){
+                Row(modifier = Modifier
+                    .padding(8.dp)
+                    .background(MaterialTheme.colors.surface)
+                    .padding(7.dp)){
+                    CreateImageProfile(modifier = Modifier.size(80.dp))
+                    Column(modifier = Modifier
+                        .padding(7.dp)
+                        .align(alignment = Alignment.CenterVertically)) {
+                        Text( data[2], fontWeight = FontWeight.Bold)
+                        Text("Project", style = MaterialTheme.typography.body2)
+                    }
+                }
+            }
+            Card(modifier = Modifier
+                .padding(13.dp)
+                .fillMaxWidth(),
+                shape = RectangleShape,
+                elevation = 4.dp){
+                Row(modifier = Modifier
+                    .padding(8.dp)
+                    .background(MaterialTheme.colors.surface)
+                    .padding(7.dp)){
+                    CreateImageProfile(modifier = Modifier.size(80.dp))
+                    Column(modifier = Modifier
+                        .padding(7.dp)
+                        .align(alignment = Alignment.CenterVertically)) {
+                        Text( data[3], fontWeight = FontWeight.Bold)
+                        Text("Project", style = MaterialTheme.typography.body2)
                     }
                 }
             }
@@ -158,8 +212,8 @@ private fun CreateInfo() {
 @Composable
 private fun CreateImageProfile(modifier: Modifier = Modifier) {
     Surface(modifier = modifier
-            .size(150.dp)
-            .padding(5.dp),
+        .size(150.dp)
+        .padding(5.dp),
         shape = CircleShape,
         border = BorderStroke(0.5.dp, Color.LightGray),
         elevation = 4.dp,
