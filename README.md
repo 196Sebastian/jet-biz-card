@@ -1,6 +1,8 @@
 ![](https://github.com/196Sebastian/jet-biz-card/blob/main/My_JetBiz_Card.png)
 
 # 🌟 Project Description ![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2F196Sebastian)
+` Application built using Android Jetpack Compose` 
+
 This application is all about me! With just a click of a button you’re able to see some of my recent projects that I’ve built with a short 
 description explaining the purpose of the application. 
 Highlighted link sends you to the project's repository, where you get to see some more information about the project with some screenshots of the app 
@@ -11,6 +13,13 @@ Let's get connected!
 <img src="https://user-images.githubusercontent.com/87108242/153422512-9394c584-96dd-4fa0-94ec-bafb41369bf0.png" width="600" height="600">
 
 # 👨‍💻 The Building Process
+- Application uses Surface Layout.
+- Created a card to give the UI more of a business card feel. 
+- Used Column and divider throughout the application.
+- Added a LazyColumn Layout for our cards.
+- Toggle Functionality.
+
+
 
 
 <img src="https://user-images.githubusercontent.com/87108242/153422507-314df6a5-49a7-4c9e-a073-93837c7fba15.png" width="600" height="600">
@@ -49,6 +58,5 @@ the link would work but all the card would link the same repository and I didn�
 
 # 🔔 Contact Me!
 
-  [📝 Portfolio](https://sebastiancorrea.netlify.app/) • [💼 Linkedin](https://www.linkedin.com/in/sebastian-correa-b6858b177/) • [🐤 Twitter](https://twitter.com/196Sebastian) • [📱 Check Out Another Project!](https://github.com/196Sebastian/jet-biz-card)
+  [📝 Portfolio](https://sebastiancorrea.netlify.app/) • [💼 Linkedin](https://www.linkedin.com/in/sebastian-correa-b6858b177/) • [🐤 Twitter](https://twitter.com/196Sebastian) 
   
-
