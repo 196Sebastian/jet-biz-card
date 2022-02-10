@@ -122,7 +122,13 @@ fun Portfolio(data: List<String>) {
                     .padding(8.dp)
                     .background(MaterialTheme.colors.surface)
                     .padding(7.dp)){
-                    CreateImageProfile(modifier = Modifier.size(80.dp))
+
+                    Image(
+                        painter = painterResource(id = R.drawable.ic_food),
+                        contentDescription = "profile image",
+                        modifier = Modifier.size(80.dp),
+                        contentScale = ContentScale.Crop
+                    )
 
                     Column(modifier = Modifier
                         .padding(7.dp)
@@ -145,7 +151,14 @@ fun Portfolio(data: List<String>) {
                     .padding(8.dp)
                     .background(MaterialTheme.colors.surface)
                     .padding(7.dp)){
-                    CreateImageProfile(modifier = Modifier.size(80.dp))
+
+                    Image(
+                        painter = painterResource(id = R.drawable.ic_todo_image),
+                        contentDescription = "profile image",
+                        modifier = Modifier.size(80.dp),
+                        contentScale = ContentScale.Crop
+                    )
+
                     Column(modifier = Modifier
                         .padding(7.dp)
                         .align(alignment = Alignment.CenterVertically)) {
@@ -167,7 +180,14 @@ fun Portfolio(data: List<String>) {
                     .padding(8.dp)
                     .background(MaterialTheme.colors.surface)
                     .padding(7.dp)){
-                    CreateImageProfile(modifier = Modifier.size(80.dp))
+
+                    Image(
+                        painter = painterResource(id = R.drawable.ic_learn_jp),
+                        contentDescription = "profile image",
+                        modifier = Modifier.size(80.dp),
+                        contentScale = ContentScale.Crop
+                    )
+
                     Column(modifier = Modifier
                         .padding(7.dp)
                         .align(alignment = Alignment.CenterVertically)) {
@@ -190,7 +210,14 @@ fun Portfolio(data: List<String>) {
                     .padding(8.dp)
                     .background(MaterialTheme.colors.surface)
                     .padding(7.dp)){
-                    CreateImageProfile(modifier = Modifier.size(80.dp))
+
+                    Image(
+                        painter = painterResource(id = R.drawable.ic_paint),
+                        contentDescription = "profile image",
+                        modifier = Modifier.size(80.dp),
+                        contentScale = ContentScale.Crop
+                    )
+
                     Column(modifier = Modifier
                         .padding(7.dp)
                         .align(alignment = Alignment.CenterVertically)) {
