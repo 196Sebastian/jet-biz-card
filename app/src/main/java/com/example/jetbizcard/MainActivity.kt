@@ -67,10 +67,11 @@ fun CreateBizCard(){
                 CreateImageProfile()
                 Divider()
                 CreateInfo()
-                Button(onClick = {
-                    buttonClickedState.value = !buttonClickedState.value
-
-                }) {
+                Button(
+                    colors = ButtonDefaults.buttonColors(backgroundColor = Color.LightGray),
+                    onClick = {
+                        buttonClickedState.value = !buttonClickedState.value
+                    }) {
                     Text("Portfolio",
                     style = MaterialTheme.typography.button)
                 }
@@ -238,18 +239,16 @@ fun Portfolio(data: List<String>) {
 private fun CreateInfo() {
     Column(modifier = Modifier.padding(5.dp)) {
         Text(
-            text = "Sebastian C.",
+            text = " Sebastian Correa",
             style = MaterialTheme.typography.h4,
-            color = MaterialTheme.colors.primaryVariant)
+            color = MaterialTheme.colors.secondaryVariant,
+            letterSpacing = 4.sp
+            )
 
         Text(
-            "Mobile Developer",
-            modifier = Modifier.padding(3.dp))
+            "Software Engineer | Mobile Developer | Android",
+            modifier = Modifier.padding(5.dp))
 
-        Text(
-            "@196Sebastian",
-            modifier = Modifier.padding(3.dp),
-            style = MaterialTheme.typography.subtitle1)
     }
 }
 
@@ -259,13 +258,13 @@ private fun CreateImageProfile(modifier: Modifier = Modifier) {
         .size(150.dp)
         .padding(5.dp),
         shape = CircleShape,
-        border = BorderStroke(0.5.dp, Color.LightGray),
+        border = BorderStroke(0.8.dp, Color.LightGray),
         elevation = 4.dp,
         color = MaterialTheme.colors.onSurface.copy(alpha = 0.5f)
     ) {
 
         Image(
-            painter = painterResource(id = R.drawable.profile_image),
+            painter = painterResource(id = R.drawable.ic_profile_image),
             contentDescription = "profile image",
             modifier = modifier.size(135.dp),
             contentScale = ContentScale.Crop
@@ -283,7 +282,7 @@ fun GitHubProjectOne() {
         addStyle(
             style = SpanStyle(
                 color = Color(0xff64B5F6),
-                fontSize = 10.sp,
+                fontSize = 11.sp,
                 textDecoration = TextDecoration.Underline
             ), start = startIndex, end = endIndex
         )
@@ -323,7 +322,7 @@ fun GitHubProjectTwo() {
         addStyle(
             style = SpanStyle(
                 color = Color(0xff64B5F6),
-                fontSize = 10.sp,
+                fontSize = 11.sp,
                 textDecoration = TextDecoration.Underline
             ), start = startIndex, end = endIndex
         )
@@ -363,7 +362,7 @@ fun GitHubProjectThree() {
         addStyle(
             style = SpanStyle(
                 color = Color(0xff64B5F6),
-                fontSize = 10.sp,
+                fontSize = 11.sp,
                 textDecoration = TextDecoration.Underline
             ), start = startIndex, end = endIndex
         )
@@ -403,7 +402,7 @@ fun GitHubProjectFour() {
         addStyle(
             style = SpanStyle(
                 color = Color(0xff64B5F6),
-                fontSize = 10.sp,
+                fontSize = 11.sp,
                 textDecoration = TextDecoration.Underline
             ), start = startIndex, end = endIndex
         )
