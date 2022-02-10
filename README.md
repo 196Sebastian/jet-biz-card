@@ -1,6 +1,7 @@
 ![](https://github.com/196Sebastian/jet-biz-card/blob/main/My_JetBiz_Card.png)
 
-# Project Description ![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2F196Sebastian)
+# 🌟 Project Description ![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2F196Sebastian)
+This application is all about me! With just a click of a button you’re able to see some of my recent projects that I’ve built with a short description explaining the purpose of the application. Highlighted link sends you to the project's repository, where you get to see some more information about the project with some screenshots of the app as well as information about the building processes of the application. Let's get connected! 
 
 
 <img src="https://user-images.githubusercontent.com/87108242/153422512-9394c584-96dd-4fa0-94ec-bafb41369bf0.png" width="600" height="600">
