@@ -83,7 +83,6 @@ fun CreateBizCard(){
                 }
             }
         }
-
     }
 }
 
@@ -153,7 +152,7 @@ fun Portfolio(data: List<String>) {
                     .padding(7.dp)){
 
                     Image(
-                        painter = painterResource(id = R.drawable.ic_todo_image),
+                        painter = painterResource(id = R.drawable.ic_to_do_image),
                         contentDescription = "profile image",
                         modifier = Modifier.size(80.dp),
                         contentScale = ContentScale.Crop
