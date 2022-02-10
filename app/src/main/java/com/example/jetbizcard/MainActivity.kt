@@ -1,35 +1,37 @@
 package com.example.jetbizcard
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.animation.core.withInfiniteAnimationFrameMillis
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.ClickableText
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.jetbizcard.ui.theme.JetBizCardTheme
-import kotlin.reflect.typeOf
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -85,7 +87,6 @@ fun CreateBizCard(){
     }
 }
 
-
 @Composable
 fun Content(){
     Box(modifier = Modifier
@@ -106,13 +107,12 @@ fun Content(){
             
         }
     }
-
 }
 
 @Composable
 fun Portfolio(data: List<String>) {
     LazyColumn{
-        items(1){ item ->
+        items(1){ _ ->
             Card(modifier = Modifier
                 .padding(13.dp)
                 .fillMaxWidth(),
@@ -123,11 +123,16 @@ fun Portfolio(data: List<String>) {
                     .background(MaterialTheme.colors.surface)
                     .padding(7.dp)){
                     CreateImageProfile(modifier = Modifier.size(80.dp))
+
                     Column(modifier = Modifier
                         .padding(7.dp)
                         .align(alignment = Alignment.CenterVertically)) {
-                        Text( data[0], fontWeight = FontWeight.Bold)
-                        Text("Great Project", style = MaterialTheme.typography.body2)
+
+                        Text(data[0], fontWeight = FontWeight.Bold)
+                        Text("An application allowing users to create a list of some of their favorite restaurants.",
+                            style = MaterialTheme.typography.body2)
+
+                        GitHubProjectOne()
                     }
                 }
             }
@@ -144,8 +149,12 @@ fun Portfolio(data: List<String>) {
                     Column(modifier = Modifier
                         .padding(7.dp)
                         .align(alignment = Alignment.CenterVertically)) {
+
                         Text( data[1], fontWeight = FontWeight.Bold)
-                        Text("Project", style = MaterialTheme.typography.body2)
+                        Text("Maintain our day-to-day tasks or list everything that we have to do.",
+                            style = MaterialTheme.typography.body2)
+
+                        GitHubProjectTwo()
                     }
                 }
             }
@@ -162,8 +171,13 @@ fun Portfolio(data: List<String>) {
                     Column(modifier = Modifier
                         .padding(7.dp)
                         .align(alignment = Alignment.CenterVertically)) {
+
                         Text( data[2], fontWeight = FontWeight.Bold)
-                        Text("Project", style = MaterialTheme.typography.body2)
+                        Text("Practice makes perfect and learning a new language is not an easy task the " +
+                                "application gathered the top 10 most used phrases in Japan for you to learn!",
+                            style = MaterialTheme.typography.body2)
+
+                        GitHubProjectThree()
                     }
                 }
             }
@@ -180,14 +194,18 @@ fun Portfolio(data: List<String>) {
                     Column(modifier = Modifier
                         .padding(7.dp)
                         .align(alignment = Alignment.CenterVertically)) {
+
                         Text( data[3], fontWeight = FontWeight.Bold)
-                        Text("Project", style = MaterialTheme.typography.body2)
+                        Text("This paint canvas application allows users to draw and or " +
+                                "trace any images they have stored in their device.",
+                            style = MaterialTheme.typography.body2)
+
+                        GitHubProjectFour()
                     }
                 }
             }
         }
     }
-
 }
 
 @Composable
@@ -227,6 +245,166 @@ private fun CreateImageProfile(modifier: Modifier = Modifier) {
             contentScale = ContentScale.Crop
         )
     }
+}
+
+@Composable
+fun GitHubProjectOne() {
+    val annotatedLinkString: AnnotatedString = buildAnnotatedString {
+        val str = "View it on GitHub!"
+        val startIndex = str.indexOf("View")
+        val endIndex = startIndex + 18
+        append(str)
+        addStyle(
+            style = SpanStyle(
+                color = Color(0xff64B5F6),
+                fontSize = 10.sp,
+                textDecoration = TextDecoration.Underline
+            ), start = startIndex, end = endIndex
+        )
+
+        addStringAnnotation(
+            tag = "URL",
+            annotation = "https://github.com/196Sebastian/nyc-restaurants",
+            start = 0,
+            end = endIndex
+        )
+    }
+
+    val uriHandler = LocalUriHandler.current
+
+    ClickableText(
+        modifier = Modifier
+            .padding(4.dp)
+            .fillMaxWidth(),
+        text = annotatedLinkString,
+        onClick = {
+            annotatedLinkString
+                .getStringAnnotations( "URL", it, it)
+                .firstOrNull()?.let { stringAnnotation ->
+                    uriHandler.openUri(stringAnnotation.item)
+                }
+        }
+    )
+}
+
+@Composable
+fun GitHubProjectTwo() {
+    val annotatedLinkString: AnnotatedString = buildAnnotatedString {
+        val str = "View it on GitHub!"
+        val startIndex = str.indexOf("View")
+        val endIndex = startIndex + 18
+        append(str)
+        addStyle(
+            style = SpanStyle(
+                color = Color(0xff64B5F6),
+                fontSize = 10.sp,
+                textDecoration = TextDecoration.Underline
+            ), start = startIndex, end = endIndex
+        )
+
+        addStringAnnotation(
+            tag = "URL",
+            annotation = "https://github.com/196Sebastian/to-do-app",
+            start = 0,
+            end = endIndex
+        )
+    }
+
+    val uriHandler = LocalUriHandler.current
+
+    ClickableText(
+        modifier = Modifier
+            .padding(4.dp)
+            .fillMaxWidth(),
+        text = annotatedLinkString,
+        onClick = {
+            annotatedLinkString
+                .getStringAnnotations( "URL", it, it)
+                .firstOrNull()?.let { stringAnnotation ->
+                    uriHandler.openUri(stringAnnotation.item)
+                }
+        }
+    )
+}
+
+@Composable
+fun GitHubProjectThree() {
+    val annotatedLinkString: AnnotatedString = buildAnnotatedString {
+        val str = "View it on GitHub!"
+        val startIndex = str.indexOf("View")
+        val endIndex = startIndex + 18
+        append(str)
+        addStyle(
+            style = SpanStyle(
+                color = Color(0xff64B5F6),
+                fontSize = 10.sp,
+                textDecoration = TextDecoration.Underline
+            ), start = startIndex, end = endIndex
+        )
+
+        addStringAnnotation(
+            tag = "URL",
+            annotation = "https://github.com/196Sebastian/japanese-quiz",
+            start = 0,
+            end = endIndex
+        )
+    }
+
+    val uriHandler = LocalUriHandler.current
+
+    ClickableText(
+        modifier = Modifier
+            .padding(4.dp)
+            .fillMaxWidth(),
+        text = annotatedLinkString,
+        onClick = {
+            annotatedLinkString
+                .getStringAnnotations( "URL", it, it)
+                .firstOrNull()?.let { stringAnnotation ->
+                    uriHandler.openUri(stringAnnotation.item)
+                }
+        }
+    )
+}
+
+@Composable
+fun GitHubProjectFour() {
+    val annotatedLinkString: AnnotatedString = buildAnnotatedString {
+        val str = "View it on GitHub!"
+        val startIndex = str.indexOf("View")
+        val endIndex = startIndex + 18
+        append(str)
+        addStyle(
+            style = SpanStyle(
+                color = Color(0xff64B5F6),
+                fontSize = 10.sp,
+                textDecoration = TextDecoration.Underline
+            ), start = startIndex, end = endIndex
+        )
+
+        addStringAnnotation(
+            tag = "URL",
+            annotation = "https://github.com/196Sebastian/drawing-app",
+            start = 0,
+            end = endIndex
+        )
+    }
+
+    val uriHandler = LocalUriHandler.current
+
+    ClickableText(
+        modifier = Modifier
+            .padding(4.dp)
+            .fillMaxWidth(),
+        text = annotatedLinkString,
+        onClick = {
+            annotatedLinkString
+                .getStringAnnotations( "URL", it, it)
+                .firstOrNull()?.let { stringAnnotation ->
+                    uriHandler.openUri(stringAnnotation.item)
+                }
+        }
+    )
 }
 
 @Preview(showBackground = true)
