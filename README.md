@@ -1,6 +1,6 @@
 ![](https://github.com/196Sebastian/jet-biz-card/blob/main/My_JetBiz_Card.png)
 
-# 🌟 Project Description ![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2F196Sebastian)
+# 🌟 Project Description
 ` Application built using Android Jetpack Compose` 
 
 This application is all about me! With just a click of a button you’re able to see some of my recent projects that I’ve built with a short 
@@ -58,5 +58,5 @@ the link would work but all the card would link the same repository and I didn�
 
 # 🔔 Contact Me!
 
-  [📝 Portfolio](https://sebastiancorrea.netlify.app/) • [💼 Linkedin](https://www.linkedin.com/in/sebastian-correa-b6858b177/) • [🐤 Twitter](https://twitter.com/196Sebastian) 
+  [📝 Portfolio](https://sebastiancorrea.netlify.app/) • [💼 Linkedin](https://www.linkedin.com/in/sebastian-correa-b6858b177/)
   
